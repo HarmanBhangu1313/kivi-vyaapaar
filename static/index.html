@@ -1,0 +1,525 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kivi-Vyaapaar | कीवी व्यापार — Voice & Vision AI Coworker (Sarvam AI x IIT BHU)</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <link rel="stylesheet" href="/static/style.css">
+</head>
+<body class="bg-[#07090e] text-slate-100 min-h-screen font-['Plus_Jakarta_Sans',sans-serif] selection:bg-indigo-500 selection:text-white antialiased overflow-x-hidden">
+
+  <!-- Ambient Glow -->
+  <div class="fixed inset-0 pointer-events-none overflow-hidden z-0">
+    <div class="absolute -top-40 left-1/4 w-[600px] h-[600px] bg-indigo-600/10 rounded-full blur-[140px]"></div>
+    <div class="absolute top-1/3 -right-40 w-[500px] h-[500px] bg-violet-600/10 rounded-full blur-[140px]"></div>
+    <div class="absolute -bottom-40 left-1/3 w-[600px] h-[600px] bg-amber-500/8 rounded-full blur-[160px]"></div>
+  </div>
+
+  <!-- Top Glass Navigation Bar -->
+  <header class="border-b border-white/[0.07] bg-[#0c101a]/80 backdrop-blur-xl sticky top-0 z-50 px-6 py-3.5 relative">
+    <div class="max-w-7xl mx-auto flex items-center justify-between">
+      
+      <div class="flex items-center gap-3.5">
+        <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-indigo-500 via-violet-500 to-amber-500 flex items-center justify-center shadow-lg shadow-indigo-500/25 ring-1 ring-white/20">
+          <i data-lucide="sparkles" class="w-5 h-5 text-white"></i>
+        </div>
+        <div>
+          <div class="flex items-center gap-2 flex-wrap">
+            <h1 class="text-xl font-bold font-['Space_Grotesk'] tracking-tight text-white">Kivi-Vyaapaar</h1>
+            <span class="text-xs px-2.5 py-0.5 rounded-full bg-indigo-500/15 text-indigo-300 font-semibold border border-indigo-500/30">कीवी व्यापार</span>
+            <span class="text-[11px] px-2 py-0.5 rounded-full bg-amber-500/10 text-amber-300 font-medium border border-amber-500/20 hidden sm:inline-block">IIT BHU Campus Tour</span>
+          </div>
+          <p class="text-xs text-slate-400">
+            Powered by Sarvam Sovereign Stack: <span class="text-indigo-400 font-medium">Saaras v4</span> • <span class="text-violet-400 font-medium">Bulbul v3</span> • <span class="text-emerald-400 font-medium">105B</span> • <span class="text-amber-400 font-medium">Vision</span>
+          </p>
+        </div>
+      </div>
+
+      <div class="flex items-center gap-3">
+        <div id="status-pill" class="flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-emerald-950/40 border border-emerald-500/30 text-emerald-400 text-xs font-medium backdrop-blur-md shadow-sm">
+          <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+          <span id="status-text">Sarvam API Live</span>
+        </div>
+        <button id="reset-btn" class="text-xs px-3 py-1.5 rounded-lg bg-white/[0.04] hover:bg-white/[0.08] text-slate-300 border border-white/[0.08] transition flex items-center gap-1.5">
+          <i data-lucide="rotate-ccw" class="w-3.5 h-3.5 text-slate-400"></i>
+          <span>Reset Demo</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Container -->
+  <main class="max-w-7xl mx-auto px-4 sm:px-6 py-6 space-y-6 relative z-10">
+
+    <!-- Hero / Dual Engine: Kivi Ambient Voice & Sarvam Vision Receipt Scanner -->
+    <section class="relative rounded-2xl bg-gradient-to-b from-[#111728]/90 via-[#0e1320]/80 to-[#0a0e17]/90 border border-white/[0.08] p-6 sm:p-7 shadow-2xl backdrop-blur-xl overflow-hidden">
+      
+      <div class="flex flex-col items-center text-center max-w-3xl mx-auto space-y-4">
+        
+        <div class="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-white/[0.05] border border-white/[0.1] text-xs font-medium text-slate-300">
+          <i data-lucide="mic" class="w-3.5 h-3.5 text-indigo-400"></i>
+          <span>Voice-First Sovereign Assistant | बोलकर कुछ भी पूछें या लिखें</span>
+        </div>
+
+        <div class="space-y-1">
+          <h2 class="text-2xl sm:text-4xl font-extrabold font-['Outfit'] tracking-tight text-white">
+            बोलिए या पर्ची स्कैन कीजिए — <span class="text-transparent bg-clip-text bg-gradient-to-r from-indigo-400 via-violet-300 to-amber-300">तुरंत उत्तर पाएं</span>
+          </h2>
+          <p class="text-xs sm:text-sm font-medium text-slate-400">
+            Ask any balance, stock, or business rule — Instant Voice &amp; Visual Answer Upfront
+          </p>
+        </div>
+
+        <!-- Voice & Vision Dual Action Center -->
+        <div class="pt-1 flex flex-wrap items-center justify-center gap-6">
+          
+          <!-- Kivi Voice Orb -->
+          <div class="flex flex-col items-center gap-2">
+            <div class="relative">
+              <button id="mic-btn" class="w-20 h-20 rounded-full bg-gradient-to-br from-indigo-500 via-indigo-600 to-violet-700 text-white flex items-center justify-center shadow-xl shadow-indigo-500/30 hover:scale-105 active:scale-95 transition-all duration-200 ring-4 ring-indigo-500/20 group">
+                <i data-lucide="mic" class="w-8 h-8 group-hover:scale-110 transition" id="mic-icon"></i>
+              </button>
+              <div id="pulse-ring" class="hidden absolute inset-0 rounded-full border-4 border-indigo-400 animate-ping pointer-events-none"></div>
+            </div>
+            <span id="mic-label" class="text-[11px] font-semibold uppercase tracking-wider text-slate-300">
+              🎤 बोलिए | Tap to Speak
+            </span>
+          </div>
+
+          <div class="hidden sm:block h-12 w-[1px] bg-white/10"></div>
+
+          <!-- Sarvam Vision Receipt Scanner Button -->
+          <div class="flex flex-col items-center gap-2">
+            <input type="file" id="receipt-file-input" accept="image/*,.pdf,.txt,.csv" class="hidden">
+            <button id="scan-receipt-btn" class="w-20 h-20 rounded-full bg-gradient-to-br from-amber-500 via-amber-600 to-orange-600 text-white flex items-center justify-center shadow-xl shadow-amber-500/25 hover:scale-105 active:scale-95 transition-all duration-200 ring-4 ring-amber-500/20 group">
+              <i data-lucide="camera" class="w-8 h-8 group-hover:scale-110 transition"></i>
+            </button>
+            <span class="text-[11px] font-semibold uppercase tracking-wider text-slate-300">
+              📸 पर्ची स्कैन | Scan Receipt
+            </span>
+          </div>
+
+        </div>
+
+        <!-- Live Waveform Visualizer -->
+        <div id="audio-wave-container" class="h-8 flex items-center gap-1 justify-center hidden">
+          <span class="wave-bar h-2"></span>
+          <span class="wave-bar h-5"></span>
+          <span class="wave-bar h-8"></span>
+          <span class="wave-bar h-4"></span>
+          <span class="wave-bar h-7"></span>
+          <span class="wave-bar h-3"></span>
+          <span class="wave-bar h-6"></span>
+        </div>
+
+        <!-- Stage Presets -->
+        <div class="w-full pt-3 border-t border-white/[0.06]">
+          <p class="text-xs font-semibold text-slate-400 mb-2 flex items-center justify-center gap-1.5">
+            <i data-lucide="play-circle" class="w-3.5 h-3.5 text-indigo-400"></i>
+            <span>Stage Presets (Click to test instantly):</span>
+          </p>
+          <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-2 text-xs">
+            
+            <button class="preset-pill p-2 rounded-xl bg-white/[0.03] hover:bg-white/[0.07] border border-white/[0.08] text-slate-200 transition text-left space-y-0.5 group"
+                    data-prompt="बंगू का बकाया amount बताएं।">
+              <div class="font-semibold text-indigo-300 group-hover:text-indigo-200 flex items-center gap-1">
+                <span>🔍 बंगू का बकाया</span>
+              </div>
+              <p class="text-[10px] text-slate-400 truncate">Check Bangu's Balance</p>
+            </button>
+
+            <button class="preset-pill p-2 rounded-xl bg-white/[0.03] hover:bg-white/[0.07] border border-white/[0.08] text-slate-200 transition text-left space-y-0.5 group"
+                    data-prompt="Refined Oil ka stock kitna bacha hai?">
+              <div class="font-semibold text-amber-300 group-hover:text-amber-200 flex items-center gap-1">
+                <span>🛢️ Oil Stock</span>
+              </div>
+              <p class="text-[10px] text-slate-400 truncate">Check Refined Oil Stock</p>
+            </button>
+
+            <button class="preset-pill p-2 rounded-xl bg-white/[0.03] hover:bg-white/[0.07] border border-white/[0.08] text-slate-200 transition text-left space-y-0.5 group"
+                    data-prompt="Kirana store ke edible oil par GST kitna lagta hai?">
+              <div class="font-semibold text-violet-300 group-hover:text-violet-200 flex items-center gap-1">
+                <span>📜 GST Advice</span>
+              </div>
+              <p class="text-[10px] text-slate-400 truncate">General Knowledge</p>
+            </button>
+
+            <button class="preset-pill p-2 rounded-xl bg-white/[0.03] hover:bg-white/[0.07] border border-white/[0.08] text-slate-200 transition text-left space-y-0.5 group"
+                    data-prompt="हरमन बंगू के खाते में हज़ार रुपये जमा करें।">
+              <div class="font-semibold text-emerald-300 group-hover:text-emerald-200 flex items-center gap-1">
+                <span>👤 हरमन बंगू</span>
+              </div>
+              <p class="text-[10px] text-slate-400 truncate">₹1,000 जमा (Deposit)</p>
+            </button>
+
+            <button class="preset-pill p-2 rounded-xl bg-white/[0.03] hover:bg-white/[0.07] border border-white/[0.08] text-slate-200 transition text-left space-y-0.5 group"
+                    data-prompt="Ramesh ji ne 20 packets basmati rice aur 5 kg mustard oil liya, 1200 cash diya aur balance udhaar likh lo">
+              <div class="font-semibold text-blue-300 group-hover:text-blue-200 flex items-center gap-1">
+                <span>🌾 Ramesh Kirana</span>
+              </div>
+              <p class="text-[10px] text-slate-400 truncate">₹1,200 Cash + Udhaar</p>
+            </button>
+
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- 🌟 UPFRONT HERO AI ANSWER HUB (DIRECT OUTPUT DISPLAY) -->
+    <section id="hero-ai-answer-card" class="rounded-2xl bg-gradient-to-r from-indigo-950/70 via-purple-950/50 to-slate-900/90 border-2 border-indigo-500/50 p-5 sm:p-6 shadow-[0_0_50px_rgba(99,102,241,0.25)] backdrop-blur-xl transition-all duration-300">
+      <div class="flex items-start justify-between gap-4 flex-wrap sm:flex-nowrap">
+        
+        <div class="space-y-2.5 flex-1 min-w-0">
+          <div class="flex items-center gap-2 flex-wrap">
+            <span class="px-3 py-1 rounded-full bg-indigo-500/25 text-indigo-300 font-bold text-xs border border-indigo-500/40 flex items-center gap-1.5 shadow-sm">
+              <i data-lucide="sparkles" class="w-3.5 h-3.5 text-indigo-400 animate-pulse"></i>
+              <span>एआई प्रत्यक्ष उत्तर | Upfront AI Answer</span>
+            </span>
+            <span id="hero-metric-badge" class="px-3 py-1 rounded-full bg-emerald-500/20 text-emerald-300 font-bold text-xs border border-emerald-500/30">
+              Ready
+            </span>
+          </div>
+
+          <!-- Prominent Direct Hindi Answer -->
+          <h3 id="hero-hindi-answer" class="text-xl sm:text-2xl font-bold font-['Outfit'] text-white leading-relaxed tracking-tight">
+            "नमस्ते! माइक दबाकर किसी भी ग्राहक का बकाया, स्टॉक, या हिसाब पूछें।"
+          </h3>
+
+          <!-- English Translation Subtitle -->
+          <p id="hero-english-answer" class="text-xs sm:text-sm text-slate-300 font-medium italic">
+            "Hello! Tap the microphone to check balances, inventory, or ask any business question hands-free."
+          </p>
+        </div>
+
+          <!-- Voice Replay & View Bill Buttons -->
+        <div class="flex flex-col items-end gap-2 shrink-0">
+          <div class="flex items-center gap-2">
+            <button id="hero-view-bill-btn" class="hidden px-3.5 py-2.5 rounded-xl bg-gradient-to-r from-emerald-600 to-teal-600 hover:from-emerald-500 hover:to-teal-500 active:scale-95 text-white text-xs font-semibold flex items-center gap-1.5 shadow-lg shadow-emerald-600/30 transition border border-emerald-400/40">
+              <i data-lucide="receipt" class="w-4 h-4 text-white"></i>
+              <span>🧾 बिल पर्ची | View Bill</span>
+            </button>
+            <button id="hero-replay-voice-btn" class="px-4 py-2.5 rounded-xl bg-gradient-to-r from-indigo-600 to-violet-600 hover:from-indigo-500 hover:to-violet-500 active:scale-95 text-white text-xs font-semibold flex items-center gap-2 shadow-lg shadow-indigo-600/30 transition border border-indigo-400/40">
+              <i data-lucide="volume-2" class="w-4 h-4 text-white"></i>
+              <span>आवाज़ सुनें | Listen Voice</span>
+            </button>
+          </div>
+          <span id="hero-voice-status" class="text-[10px] text-slate-400 font-mono">Sarvam Bulbul (Voice: Pooja)</span>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Top Bilingual KPI Cards -->
+    <section class="grid grid-cols-2 md:grid-cols-4 gap-4">
+      
+      <div class="p-4 rounded-xl bg-[#0e1320]/80 border border-white/[0.07] backdrop-blur-md flex items-center gap-3.5 shadow-sm">
+        <div class="w-10 h-10 rounded-lg bg-rose-500/10 border border-rose-500/20 flex items-center justify-center text-rose-400 shrink-0">
+          <i data-lucide="book-open" class="w-5 h-5"></i>
+        </div>
+        <div class="min-w-0">
+          <span class="text-[11px] text-slate-400 font-medium block truncate">बाज़ार उधार | Total Credit</span>
+          <p id="kpi-udhaar" class="text-lg font-bold text-white font-['Outfit']">₹0</p>
+        </div>
+      </div>
+
+      <div class="p-4 rounded-xl bg-[#0e1320]/80 border border-white/[0.07] backdrop-blur-md flex items-center gap-3.5 shadow-sm">
+        <div class="w-10 h-10 rounded-lg bg-amber-500/10 border border-amber-500/20 flex items-center justify-center text-amber-400 shrink-0">
+          <i data-lucide="alert-triangle" class="w-5 h-5"></i>
+        </div>
+        <div class="min-w-0">
+          <span class="text-[11px] text-slate-400 font-medium block truncate">कम स्टॉक | Low Stock</span>
+          <p id="kpi-low-stock" class="text-lg font-bold text-amber-400 font-['Outfit']">0 आइटम्स</p>
+        </div>
+      </div>
+
+      <div class="p-4 rounded-xl bg-[#0e1320]/80 border border-white/[0.07] backdrop-blur-md flex items-center gap-3.5 shadow-sm">
+        <div class="w-10 h-10 rounded-lg bg-emerald-500/10 border border-emerald-500/20 flex items-center justify-center text-emerald-400 shrink-0">
+          <i data-lucide="arrow-down-left" class="w-5 h-5"></i>
+        </div>
+        <div class="min-w-0">
+          <span class="text-[11px] text-slate-400 font-medium block truncate">आज का वॉल्यूम | Volume</span>
+          <p id="kpi-volume" class="text-lg font-bold text-emerald-400 font-['Outfit']">₹0</p>
+        </div>
+      </div>
+
+      <div class="p-4 rounded-xl bg-[#0e1320]/80 border border-white/[0.07] backdrop-blur-md flex items-center gap-3.5 shadow-sm">
+        <div class="w-10 h-10 rounded-lg bg-indigo-500/10 border border-indigo-500/20 flex items-center justify-center text-indigo-400 shrink-0">
+          <i data-lucide="shield-check" class="w-5 h-5"></i>
+        </div>
+        <div class="min-w-0">
+          <span class="text-[11px] text-slate-400 font-medium block truncate">मंज़ूरी कार्ड | Approvals</span>
+          <p id="kpi-approvals" class="text-lg font-bold text-indigo-400 font-['Outfit']">0 पेंडिंग</p>
+        </div>
+      </div>
+
+    </section>
+
+    <!-- Main Workspace Grid: Split Screen -->
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-6">
+
+      <!-- Left Column (5 cols): Indus Cowork AI Teammate & Governance -->
+      <div class="lg:col-span-5 space-y-6">
+
+        <!-- Live Agent Execution Tracker (Indus Cowork Pattern) -->
+        <div class="rounded-xl bg-[#0e1320]/80 border border-white/[0.07] p-5 space-y-4 backdrop-blur-md shadow-lg">
+          
+          <div class="flex items-center justify-between border-b border-white/[0.07] pb-3">
+            <div class="flex items-center gap-2">
+              <i data-lucide="cpu" class="w-4 h-4 text-indigo-400"></i>
+              <h3 class="text-xs font-bold text-white uppercase tracking-wider font-['Space_Grotesk']">
+                इंडस कोवर्क | Indus AI Teammate
+              </h3>
+            </div>
+            <span class="text-[10px] px-2 py-0.5 rounded bg-indigo-500/15 text-indigo-300 font-mono border border-indigo-500/25">sarvam-105b</span>
+          </div>
+
+          <!-- Bilingual Speech / OCR Transcript Display -->
+          <div class="p-3.5 rounded-xl bg-slate-900/80 border border-white/[0.06] space-y-2">
+            
+            <div class="flex items-center justify-between">
+              <span class="text-[11px] font-semibold text-slate-400 uppercase tracking-wider flex items-center gap-1.5">
+                <i data-lucide="message-square" class="w-3.5 h-3.5 text-indigo-400"></i>
+                Saaras v4 Transcript (Code-Mixed)
+              </span>
+              <span id="audio-indicator" class="text-[10px] text-emerald-400 hidden flex items-center gap-1 font-medium">
+                <i data-lucide="volume-2" class="w-3 h-3 animate-bounce"></i> Bulbul Speaking
+              </span>
+            </div>
+
+            <!-- Hindi Transcript -->
+            <p id="transcript-display" class="text-xs text-slate-200 italic font-medium leading-relaxed">
+              "माइक का बटन दबाएं या ऊपर किसी भी बटन पर क्लिक करके टेस्ट करें..."
+            </p>
+
+            <!-- English Translation Banner -->
+            <div id="english-transcript-box" class="pt-2 border-t border-white/[0.06] text-[11px] text-slate-400 hidden">
+              <span class="text-indigo-400 font-semibold">🇬🇧 English Translation:</span>
+              <p id="english-transcript-text" class="italic mt-0.5 text-slate-300"></p>
+            </div>
+
+          </div>
+
+          <!-- Animated Execution Steps -->
+          <div class="space-y-2" id="steps-container">
+            <div class="text-xs text-slate-400 text-center py-4">
+              Indus Cowork idle. Ready for voice or receipt upload.
+            </div>
+          </div>
+
+          <!-- Hidden audio element for speech -->
+          <audio id="tts-audio" class="hidden"></audio>
+
+        </div>
+
+        <!-- Human-in-the-Loop Governance Card -->
+        <div class="rounded-xl bg-[#0e1320]/80 border border-white/[0.07] p-5 space-y-4 backdrop-blur-md shadow-lg">
+          
+          <div class="flex items-center justify-between border-b border-white/[0.07] pb-3">
+            <div class="flex items-center gap-2">
+              <i data-lucide="user-check" class="w-4 h-4 text-violet-400"></i>
+              <h3 class="text-xs font-bold text-white uppercase tracking-wider font-['Space_Grotesk']">
+                मंज़ूरी केंद्र | Human Governance Center
+              </h3>
+            </div>
+            <span class="text-[10px] px-2 py-0.5 rounded bg-violet-500/15 text-violet-300 font-semibold border border-violet-500/25">Governance</span>
+          </div>
+          
+          <p class="text-xs text-slate-400">
+            Critical actions (large credit, vendor POs, invoice scans) pause for merchant confirmation.
+          </p>
+
+          <div id="approvals-container" class="space-y-3">
+            <div class="text-xs text-slate-500 text-center py-4">No pending approvals. All systems synchronized.</div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Right Column (7 cols): Interactive Khata Ledger & Inventory -->
+      <div class="lg:col-span-7 space-y-6">
+
+        <!-- Khata Customer Ledger with TABS -->
+        <div class="rounded-xl bg-[#0e1320]/80 border border-white/[0.07] p-5 space-y-4 backdrop-blur-md shadow-lg">
+          
+          <!-- Tab Navigation -->
+          <div class="flex items-center justify-between border-b border-white/[0.07] pb-3 flex-wrap gap-2">
+            <div class="flex items-center gap-2">
+              <button id="tab-btn-balances" class="tab-btn px-3 py-1.5 rounded-lg bg-indigo-600 text-white text-xs font-semibold flex items-center gap-1.5 transition">
+                <i data-lucide="users" class="w-3.5 h-3.5"></i>
+                <span>ग्राहक बैलेंस | Balances</span>
+              </button>
+              <button id="tab-btn-passbook" class="tab-btn px-3 py-1.5 rounded-lg bg-white/[0.05] hover:bg-white/[0.1] text-slate-300 text-xs font-medium flex items-center gap-1.5 transition">
+                <i data-lucide="history" class="w-3.5 h-3.5"></i>
+                <span>लाइव पासबुक | Transactions</span>
+              </button>
+            </div>
+            <span class="text-xs text-slate-400" id="customer-count">0 ग्राहक</span>
+          </div>
+
+          <!-- View 1: Customer Balances Table -->
+          <div id="view-balances" class="overflow-x-auto">
+            <table class="w-full text-left text-xs">
+              <thead class="text-slate-400 uppercase bg-slate-900/60 border-b border-white/[0.06]">
+                <tr>
+                  <th class="py-2.5 px-3">ग्राहक | Customer</th>
+                  <th class="py-2.5 px-3">फ़ोन | Phone</th>
+                  <th class="py-2.5 px-3">क्रेडिट सीमा | Limit</th>
+                  <th class="py-2.5 px-3 text-right">कुल स्थिति | Net Balance</th>
+                </tr>
+              </thead>
+              <tbody id="customers-table-body" class="divide-y divide-white/[0.05] text-slate-300">
+                <!-- Dynamically populated -->
+              </tbody>
+            </table>
+          </div>
+
+          <!-- View 2: Live Transactions Feed (Passbook) -->
+          <div id="view-passbook" class="overflow-x-auto hidden">
+            <table class="w-full text-left text-xs">
+              <thead class="text-slate-400 uppercase bg-slate-900/60 border-b border-white/[0.06]">
+                <tr>
+                  <th class="py-2.5 px-3">समय | Time</th>
+                  <th class="py-2.5 px-3">ग्राहक | Customer</th>
+                  <th class="py-2.5 px-3">प्रकार | Type</th>
+                  <th class="py-2.5 px-3">राशि | Amount</th>
+                  <th class="py-2.5 px-3">विवरण | Note</th>
+                </tr>
+              </thead>
+              <tbody id="transactions-table-body" class="divide-y divide-white/[0.05] text-slate-300">
+                <!-- Dynamically populated -->
+              </tbody>
+            </table>
+          </div>
+
+        </div>
+
+        <!-- Inventory & Stock Alerts -->
+        <div class="rounded-xl bg-[#0e1320]/80 border border-white/[0.07] p-5 space-y-4 backdrop-blur-md shadow-lg">
+          
+          <div class="flex items-center justify-between border-b border-white/[0.07] pb-3">
+            <div class="flex items-center gap-2">
+              <i data-lucide="package" class="w-4 h-4 text-amber-400"></i>
+              <h3 class="text-xs font-bold text-white uppercase tracking-wider font-['Space_Grotesk']">
+                गोदाम व स्टॉक | Inventory &amp; Stock Control
+              </h3>
+            </div>
+            <span class="text-xs text-slate-400" id="inventory-count">0 आइटम्स</span>
+          </div>
+
+          <div class="overflow-x-auto">
+            <table class="w-full text-left text-xs">
+              <thead class="text-slate-400 uppercase bg-slate-900/60 border-b border-white/[0.06]">
+                <tr>
+                  <th class="py-2.5 px-3">आइटम | Item</th>
+                  <th class="py-2.5 px-3">श्रेणी | Category</th>
+                  <th class="py-2.5 px-3">दर | Rate</th>
+                  <th class="py-2.5 px-3">उपलब्ध | Stock</th>
+                  <th class="py-2.5 px-3 text-right">स्थिति | Status</th>
+                </tr>
+              </thead>
+              <tbody id="inventory-table-body" class="divide-y divide-white/[0.05] text-slate-300">
+                <!-- Dynamically loaded -->
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+
+  </main>
+
+  <!-- Digital Invoice & Bill Receipt Modal -->
+  <div id="invoice-modal" class="fixed inset-0 z-50 bg-black/80 backdrop-blur-md hidden flex items-center justify-center p-4">
+    <div class="bg-[#0f1422] border-2 border-indigo-500/40 rounded-2xl max-w-lg w-full p-6 shadow-2xl space-y-4 max-h-[90vh] overflow-y-auto">
+      
+      <!-- Receipt Header -->
+      <div class="border-b border-white/10 pb-4 text-center space-y-1">
+        <div class="inline-flex items-center gap-2 px-3 py-0.5 rounded-full bg-indigo-500/15 text-indigo-300 font-semibold text-[11px] border border-indigo-500/25">
+          <span>डिजिटल बिल पर्ची | Cash / Credit Memo</span>
+        </div>
+        <h3 class="text-lg font-bold font-['Space_Grotesk'] text-white">कीवी किराना एवं जनरल स्टोर्स</h3>
+        <p class="text-[11px] text-slate-400">लंका चौराहा, वाराणसी (उ.प्र.) • GSTIN: 09AABCU9603R1ZM</p>
+      </div>
+
+      <!-- Bill Meta -->
+      <div class="grid grid-cols-2 gap-2 text-xs py-1 text-slate-300 bg-white/[0.02] p-3 rounded-xl border border-white/5">
+        <div>
+          <span class="text-slate-400 block text-[10px]">ग्राहक | Customer</span>
+          <b id="bill-customer-name" class="text-white text-sm">हरमन बंगू</b>
+        </div>
+        <div class="text-right">
+          <span class="text-slate-400 block text-[10px]">बिल सं. | Invoice No.</span>
+          <b id="bill-number" class="text-indigo-400 font-mono">KV-89241</b>
+        </div>
+        <div>
+          <span class="text-slate-400 block text-[10px]">दिनांक | Date</span>
+          <span id="bill-date" class="font-mono text-[11px]">25 Oct 2026</span>
+        </div>
+        <div class="text-right">
+          <span class="text-slate-400 block text-[10px]">भुगतान स्थिति | Status</span>
+          <span id="bill-status" class="px-2 py-0.5 rounded text-[10px] bg-amber-500/15 text-amber-300 font-bold border border-amber-500/25">खाते में उधार (Udhaar)</span>
+        </div>
+      </div>
+
+      <!-- Itemized Table -->
+      <div class="border border-white/10 rounded-xl overflow-hidden">
+        <table class="w-full text-xs text-left">
+          <thead class="bg-white/[0.04] text-slate-400 border-b border-white/10 uppercase text-[10px]">
+            <tr>
+              <th class="py-2 px-3">सामान | Item</th>
+              <th class="py-2 px-2 text-center">मात्रा | Qty</th>
+              <th class="py-2 px-2 text-right">दर | Rate</th>
+              <th class="py-2 px-3 text-right">रकम | Total</th>
+            </tr>
+          </thead>
+          <tbody id="bill-items-tbody" class="divide-y divide-white/5 text-slate-300">
+            <!-- Dynamically populated -->
+          </tbody>
+        </table>
+      </div>
+
+      <!-- Total Summary -->
+      <div class="border-t border-white/10 pt-3 space-y-1.5 text-xs">
+        <div class="flex justify-between text-slate-400">
+          <span>कुल योग | Subtotal:</span>
+          <span id="bill-subtotal" class="font-mono">₹1,955</span>
+        </div>
+        <div class="flex justify-between text-slate-400">
+          <span>जीएसटी | Tax (Exempt/Food Staples):</span>
+          <span class="font-mono">₹0.00</span>
+        </div>
+        <div class="flex justify-between text-sm sm:text-base font-bold text-white pt-1 border-t border-white/10">
+          <span class="text-indigo-300">देय कुल राशि | Grand Total:</span>
+          <span id="bill-grand-total" class="font-mono text-emerald-400 text-lg">₹1,955</span>
+        </div>
+      </div>
+
+      <!-- Actions -->
+      <div class="pt-2 flex items-center gap-2">
+        <button onclick="window.print()" class="flex-1 py-2 px-3 rounded-xl bg-indigo-600 hover:bg-indigo-500 text-white text-xs font-semibold flex items-center justify-center gap-1.5 shadow-md transition">
+          <i data-lucide="printer" class="w-3.5 h-3.5"></i>
+          <span>प्रिंट पर्ची | Print</span>
+        </button>
+        <button id="bill-whatsapp-btn" class="py-2 px-3 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white text-xs font-semibold flex items-center gap-1.5 shadow-md transition">
+          <i data-lucide="share-2" class="w-3.5 h-3.5"></i>
+          <span>व्हाट्सएप | Share</span>
+        </button>
+        <button id="close-bill-modal-btn" class="py-2 px-3 rounded-xl bg-white/[0.08] hover:bg-white/[0.12] text-slate-300 text-xs font-medium transition">
+          ✕ बंद | Close
+        </button>
+      </div>
+
+    </div>
+  </div>
+
+  <script src="/static/app.js"></script>
+</body>
+</html>
