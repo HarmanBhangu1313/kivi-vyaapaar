@@ -7,7 +7,7 @@
 [![Python 3.10+](https://img.shields.io/badge/Python-3.10%2B-blue.svg)](https://python.org)
 [![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
 
-🔗 **Live Cloud App**: **[[[https://kivi-vyaapaar-kjjyqzfwjp2susnkm5tkik.streamlit.app/](https://kivi-vyaapaar-kjjyqzfwjp2susnkm5tkik.streamlit.app/](https://kivi-vyaapaar-2ukx7nytbbdkcxxuyv6vmr.streamlit.app/))](https://kivi-vyaapaar-2ukx7nytbbdkcxxuyv6vmr.streamlit.app/)**
+🔗 **Live Cloud App**: **[live demo](https://kivi-vyaapaar-kjjyqzfwjp2susnkm5tkik.streamlit.app/](https://kivi-vyaapaar-2ukx7nytbbdkcxxuyv6vmr.streamlit.app/))](https://kivi-vyaapaar-2ukx7nytbbdkcxxuyv6vmr.streamlit.app/)**
 
 ---
 
